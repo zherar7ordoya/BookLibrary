@@ -1,0 +1,19 @@
+@startuml
+
+left to right direction
+
+class Cliente {
+  + int Id
+  + string Nombre
+  + List<Factura> Facturas
+}
+
+class Factura {
+  + int Id
+  + DateTime Fecha
+  + string Item
+}
+
+Cliente "1"---"N" Factura
+
+@enduml

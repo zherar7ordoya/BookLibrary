@@ -1,0 +1,21 @@
+@startuml
+
+start
+
+repeat
+
+    :Analizar topología relacional;
+
+    if (\n¿Existe jerarquía acíclica?\n) then (\nSí\n)
+        :Jerárquico / NoSQL;
+        stop
+    else (\nNo\n)
+    endif
+
+repeat while (\n¿Hay relaciones N:M o ciclos?\n) is (\nNo\n) not (\nSí\n)
+
+:Relacional / Grafos;
+
+stop
+
+@enduml

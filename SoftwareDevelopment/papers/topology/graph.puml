@@ -1,0 +1,17 @@
+@startuml
+
+graph TD {
+    A [label="Driver A"]
+    B [label="Driver B"]
+    C [label="Driver C"]
+
+    X [label="Car 1"]
+    Y [label="Car 2"]
+
+    A -- X
+    A -- Y
+    B -- X
+    C -- Y
+}
+
+@enduml

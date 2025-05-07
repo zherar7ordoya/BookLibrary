@@ -1,0 +1,71 @@
+@startuml SDP
+
+title Software Development Process
+center header Simplified RUP
+
+|Analysis|
+
+start
+
+fork
+    :Organization Chart;
+    :Roles Diagram;
+fork again
+    :Elicitation;
+fork again
+    :Business Documents;
+end fork
+
+:Software Requirements Specification;
+
+fork
+    :Funcional Requirements;
+fork again
+    :Non-Functional Requirements;
+fork again
+    :Data Dictionary;
+end fork
+
+:Business Process Diagram;
+
+:Mockup;
+
+fork
+    :Use Case Diagram;
+fork again
+    :Use Case Specification with Mockups;
+end fork
+
+
+|Design|
+
+fork
+    :IPO (Data Flow Diagram);
+fork again
+    :Domain Model;
+end fork
+
+:State Machine Diagram;
+
+:Class Diagram;
+
+fork
+    :Sequence Diagram;
+fork again
+    :Entity-Relationship Diagram;
+end fork
+
+
+|Programming|
+
+:Source Code;
+
+fork
+    :Unit Test;
+fork again
+    :Integration Test;
+end fork
+
+stop
+
+@enduml

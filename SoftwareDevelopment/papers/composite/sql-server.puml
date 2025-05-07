@@ -1,0 +1,28 @@
+@startuml
+
+map permiso_permiso {
+    id_permiso_padre => int, NULL
+    id_permiso_hijo => int
+}
+
+note right of permiso_permiso
+    NULL marca rol raíz
+end note
+
+map permiso {
+    id => int, PK
+    nombre => varchar
+    permiso => varchar, NULL
+}
+
+note bottom of permiso
+    * NULL => rol (node)
+    * no NULL => permiso (leaf)
+end note
+
+map usuarios_permisos {
+    id_usuario => int, FK usuario
+    id_permiso => int, FK permiso
+}
+
+@enduml

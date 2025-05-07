@@ -1,0 +1,14 @@
+@startuml
+start
+:Análisis de relaciones lógicas entre entidades;
+if (¿Forman un árbol?) then (Sí)
+    :Usar modelo documental;
+else (No)
+    if (¿Forman un grafo?) then (Sí)
+        :Usar modelo relacional;
+    else (No)
+        :Caso no cubierto – analizar estructura específica;
+    endif
+endif
+stop
+@enduml

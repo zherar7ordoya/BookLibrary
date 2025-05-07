@@ -1,0 +1,24 @@
+@startuml
+
+class Cliente {
+  + int Id
+  + string Nombre
+  + List<ClienteFactura> ClienteFacturas
+}
+
+class Factura {
+  + int Id
+  + DateTime Fecha
+  + List<ClienteFactura> ClienteFacturas
+}
+
+class Cobranza {
+    + int Id
+    + DateTime Fecha
+    + decimal Monto
+}
+
+Cliente "N"--"M" Factura
+Factura "N"--"M" Cobranza
+
+@enduml

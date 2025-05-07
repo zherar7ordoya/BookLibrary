@@ -1,0 +1,9 @@
+@startuml
+start
+:Análisis OO;
+:Topología lógica;
+:Elección del modelo de persistencia;
+:Diseño OO (estructuras, entidades);
+:Implementación OO (C#, LiteDB/SQLite);
+stop
+@enduml

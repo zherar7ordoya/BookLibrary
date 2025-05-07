@@ -1,0 +1,3 @@
+digraph D {
+    "Cliente A" -> "Factura 1" -> "Cliente B" -> "Factura 2" -> "Cliente A"
+}

@@ -1,0 +1,25 @@
+@startuml
+
+left to right direction
+
+class Persona {
+    + int Id
+    + string Nombre
+    + string[] AutosId
+}
+
+note bottom of Persona
+    **Adecuación:**
+    ""string[] AutosId""
+    //para escalas pequeñas.//
+end note
+
+class Auto {
+    + int Id
+    + string Patente
+    + string Modelo
+}
+
+Persona "1"---"N" Auto
+
+@enduml

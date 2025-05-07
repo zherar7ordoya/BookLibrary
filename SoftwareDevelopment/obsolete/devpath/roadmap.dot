@@ -1,0 +1,115 @@
+digraph roadmap {
+    graph [fontname = "Arial Black";];
+    node [fontname = "Calibri";];
+    edge [fontname = "Courier New";];
+    
+    label = "DEVELOPMENT ROADMAP\nIterative Rational Unified Process (iRUP)";
+    labelloc = "t";
+    fontsize = 16;
+    
+    start [shape = Mdiamond;];
+    end [shape = Mdiamond;];
+    
+    subgraph cluster_analysis {
+        node [style = filled;];
+        label = "Analysis";
+        
+        Elicitation [label = "Elicitation";];
+        BusinessDocument [label = "Business\nDocument";];
+
+        OrganizationChart [label = "Organization\nChart";];
+        RoleDiagram [label = "Role Diagram";];
+        
+        SRS [label = "Software\nRequirement\nSpecification\n(SRS)";];
+        
+        FunctionalRequirement [label = "Functional\nRequirement";];
+        NonFunctionalRequirement [label = "Non-Functional\nRequirement";];
+        DataDictionary [label = "Data\nDictionary";];
+        
+        BPD [label = "Business\nProcess\nDiagram\n(BPD)";];
+        
+        UseCaseDiagram [label = "Use\nCase\nDiagram";];
+        Mockup [label = "Mockup";];
+        
+        UseCaseSpecification [label = "Use\nCase\nSpecification";];
+    }
+    
+    subgraph cluster_design {
+        node [style = filled;];
+        label = "Design";
+        
+        DomainModel [label = "Domain\nModel";];
+        IPO [label = "Input-Process-Output\nFunctional\nArtifact\n(IPO)";];
+        
+        ClassDiagram [label = "Class\nDiagram";];
+        
+        SequenceDiagram [label = "Sequence\nDiagram";];
+        ERD [label = "Entity-Relationship\nDiagram\n(ERD)";];
+    }
+    
+    subgraph cluster_programming {
+        node [style = filled;];
+        label = "Programming";
+        
+        SourceCode [label = "Source\nCode";];
+        UnitTest [label = "Unit\nTest";];
+        IntegrationTest [label = "Integration\nTest";];
+    }
+    
+    start -> Elicitation;
+    start -> OrganizationChart;
+    start -> BusinessDocument;
+    
+    OrganizationChart -> RoleDiagram;
+    
+    Elicitation -> SRS;
+    RoleDiagram -> SRS;
+    BusinessDocument -> SRS;
+    
+    SRS -> FunctionalRequirement;
+    SRS -> NonFunctionalRequirement;
+    SRS -> DataDictionary;
+    
+    DataDictionary -> BPD;
+    FunctionalRequirement -> BPD;
+    NonFunctionalRequirement -> BPD;
+    
+    BPD -> Mockup;
+    BPD -> UseCaseDiagram;
+    
+    UseCaseDiagram -> UseCaseSpecification;
+    Mockup -> UseCaseSpecification;
+    
+    UseCaseSpecification -> IPO;
+    UseCaseSpecification -> DomainModel;
+    UseCaseSpecification -> SourceCode;
+    
+    IPO -> ClassDiagram;
+    DomainModel -> ClassDiagram;
+    
+    ClassDiagram -> SequenceDiagram;
+    ClassDiagram -> ERD;
+    
+    SequenceDiagram -> SourceCode;
+    ERD -> SourceCode;
+    
+    SourceCode -> UnitTest;
+    UnitTest -> IntegrationTest;
+    
+    IntegrationTest -> end;
+    
+    IPO -> BusinessDocument [style = dashed; color = "gray60"; fontcolor = "gray60";];
+    DomainModel -> BPD [style = dashed; color = "gray60"; fontcolor = "gray60";];
+    SequenceDiagram -> UseCaseSpecification [style = dashed; color = "gray60"; fontcolor = "gray60";];
+    
+    subgraph cluster_note {
+        node [style = filled; fontcolor = "gray60"; color = "gray90"; fillcolor = "white";];
+        label = "";
+        color = "gray60";
+        style = dotted;
+        note [label = "Functional model of atomic processes\n(input, process, output)\naligned with each use case specification.";color = "white";fontcolor = "gray60";];
+    }
+    
+    
+    note -> IPO [color = "gray60"; fontcolor = "gray60";];
+}

@@ -1,0 +1,16 @@
+@startjson
+{
+  "Id": "C001",
+  "Nombre": "Cliente Ejemplo",
+  "Facturas": [
+    {
+      "IdFactura": "F001",
+      "Fecha": "2025-04-20",
+      "Items": [
+        { "IdItem": "I001", "Descripcion": "Producto A" },
+        { "IdItem": "I002", "Descripcion": "Producto B" }
+      ]
+    }
+  ]
+}
+@endjson

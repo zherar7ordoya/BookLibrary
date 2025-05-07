@@ -1,0 +1,10 @@
+@startjson
+{
+  "Id": 1,
+  "Nombre": "Ana López",
+  "Facturas": [
+    { "Id": 101, "Fecha": "2025-04-20", "Monto": 500 },
+    { "Id": 102, "Fecha": "2025-05-10", "Monto": 750 }
+  ]
+}
+@endjson

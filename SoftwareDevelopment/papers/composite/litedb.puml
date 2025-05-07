@@ -1,0 +1,27 @@
+@startjson
+{
+  "_id": "64b2c3...",
+  "username": "alice",
+  "roles": [
+    {
+      "id": 1, "name": "Manager",
+      "permissions": [
+        "CREATE_REPORT",
+        "VIEW_REPORT",
+        "APPROVE_EXPENSE"
+      ]
+    },
+    {
+      "id": 2, "name": "Auditor",
+      "permissions": [
+        "VIEW_REPORT",
+        "EXPORT_AUDIT"
+      ]
+    }
+  ],
+  "specialPermissions": [
+    "DELETE_REPORT",
+    "OVERRIDE_LIMITS"
+  ]
+}
+@endjson
